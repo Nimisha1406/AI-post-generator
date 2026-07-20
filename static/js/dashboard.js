@@ -122,9 +122,7 @@ async function disconnectLinkedIn() {
 
     }
 
-
     checkLinkedIn();
-
 
     setTimeout(() => {
 
