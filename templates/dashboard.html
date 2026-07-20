@@ -1,0 +1,271 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<div class="container mt-5">
+
+
+    <!-- Header -->
+
+    <div class="text-center mb-5">
+
+        <h1 class="fw-bold">
+            AI Post Generator
+        </h1>
+
+        <p class="text-muted">
+            Connect LinkedIn and create professional AI-generated posts.
+        </p>
+
+    </div>
+
+    <!-- Message Area -->
+    <div id="message" class="mb-3"></div>
+
+
+    <!-- LinkedIn Section -->
+
+    <div class="card shadow-lg border-0 rounded-4 mb-4">
+
+
+        <div class="card-body p-5 text-center">
+
+
+            <h3 class="fw-bold mb-4">
+
+                <i class="bi bi-linkedin text-primary"></i>
+
+                LinkedIn Connection
+
+            </h3>
+
+
+
+            <div id="linkedin_status" class="text-muted">
+
+                Checking LinkedIn connection...
+
+            </div>
+
+
+
+
+            <button id="linkedin_button" onclick="connectLinkedIn()" class="btn btn-primary w-100 mt-4 rounded-3">
+
+                Connect LinkedIn
+
+            </button>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- AI Post Generator Section -->
+
+    <div class="card shadow-lg border-0 rounded-4">
+
+        <div class="card-body p-5">
+
+
+            <h3 class="fw-bold text-center mb-3">
+                Generate AI Post
+            </h3>
+
+
+            <p class="text-muted text-center">
+                Create professional LinkedIn posts with AI.
+            </p>
+
+
+            <!-- Topic -->
+
+            <input id="topic" type="text" class="form-control form-control-lg mb-3" placeholder="Enter your topic">
+
+
+
+            <button id="generatePostBtn" onclick="generatePost()" class="btn btn-success w-100 rounded-3">
+
+                Generate Content
+
+            </button>
+
+
+            <hr class="my-4">
+
+
+
+            <!-- Image Selection -->
+
+            <label class="fw-bold">
+                Choose Image Option
+            </label>
+
+
+            <select id="image_option" class="form-select mt-2">
+
+                <option value="">
+                    Select Image Option
+                </option>
+
+                <option value="ai">
+                    Generate Image using AI
+                </option>
+
+
+                <option value="upload">
+                    Upload My Own Image
+                </option>
+
+            </select>
+
+
+
+            <!-- AI Image Section -->
+
+            <div id="ai_image_section" style="display:none;">
+
+                <button id="generateImageBtn" onclick="generateImage()" class="btn btn-info w-100 mt-3">
+
+                    Generate AI Image
+
+                </button>
+
+            </div>
+
+
+
+
+            <!-- Upload Image Section -->
+
+            <div id="upload_image_section" style="display:none;">
+
+                <input id="image_upload" type="file" accept="image/*" class="form-control mt-3">
+
+
+                <button onclick="uploadImage()" class="btn btn-secondary w-100 mt-3">
+
+                    Upload Image
+
+                </button>
+
+            </div>
+
+
+
+            <!-- Preview -->
+
+
+            <h5 class="fw-bold mt-4">
+
+                LinkedIn Preview
+
+            </h5>
+
+
+
+            <div id="linkedin_preview" class="border rounded-3 p-4 bg-light">
+
+
+                Your post preview will appear here.
+
+
+            </div>
+
+
+
+            <!-- Buttons -->
+
+
+            <div class="row mt-4">
+
+
+                <div class="col-md-6">
+
+                    <button id="postNowBtn" onclick="postNow()" class="btn btn-primary w-100">
+
+                        Post Now
+
+                    </button>
+
+
+                </div>
+
+
+
+                <div class="col-md-6">
+
+
+                    <button onclick="showSchedule()" class="btn btn-warning w-100">
+
+                        Schedule Post
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Schedule Area -->
+
+
+            <div id="schedule_box" class="mt-4" style="display:none;">
+
+
+                <label class="fw-bold">
+
+                    Select Date and Time
+
+                </label>
+
+
+                <input id="schedule_time" type="datetime-local" class="form-control mt-2">
+
+
+
+                <button id="scheduleBtn" onclick="schedulePost()" class="btn btn-dark w-100 mt-3">
+
+                    Confirm Schedule
+
+                </button>
+
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- Toast Message -->
+
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+
+        <div id="toastMessage" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+
+            <div class="toast-body">
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/static/js/dashboard.js"></script>
+
+
+    {% endblock %}

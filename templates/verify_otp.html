@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height:80vh;">
+
+    <div class="card shadow-lg border-0 rounded-4" style="width:420px;">
+
+        <div class="card-body p-5">
+
+            <h2 class="text-center fw-bold mb-3">
+                Verify Email
+            </h2>
+
+            <p class="text-muted text-center mb-4">
+
+                Enter the OTP sent to your email address.
+
+            </p>
+
+            <div id="message" class="mb-3"></div>
+
+            <div class="mb-4">
+
+                <label class="form-label fw-semibold">
+
+                    Verification OTP
+
+                </label>
+
+                <input id="otp" type="text" class="form-control form-control-lg rounded-3" placeholder="Enter OTP">
+
+            </div>
+
+            <button onclick="verifyOTP()" class="btn btn-primary w-100 btn-lg rounded-3">
+
+                Verify OTP
+
+            </button>
+
+            <div class="text-center mt-4">
+
+                <a href="/signup" class="text-decoration-none">
+
+                    Back to Signup
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for(
+'static',
+filename='js/auth.js'
+) }}"></script>
+
+
+{% endblock %}
