@@ -6,7 +6,7 @@ A robust, modular, AI-powered web application built with the Flask framework tha
 
 ## 🚀 Key Features
 
-* **Secure User Authentication:**User registration, login, logout, JWT authentication, and email verification using OTP.
+* **Secure User Authentication:** User registration, login, logout, JWT authentication, and email verification using OTP.
 * **Password Recovery:** Secure password reset using email OTP verification.
 * **AI Content Generation:** Generate professional LinkedIn posts using the OpenAI API.
 * **AI Image Generation:** Create AI-generated images to accompany LinkedIn posts.
